@@ -13,7 +13,7 @@ import re
 try:
     import pexpect
 except ImportError:
-    print "You need to install pexpect!\neg. sudo apt-get install pexpect"
+    print "You need to install pexpect!\neg. sudo apt-get install python-pexpect"
     raise SystemExit
 import base64
 import cPickle
