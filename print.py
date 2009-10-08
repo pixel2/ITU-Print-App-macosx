@@ -268,10 +268,10 @@ class PrintApp( object ):
             self.loginDetails = {'login': self.CID, 
                                      'pass': base64.b64encode(self.password),
                                      'printer': self.printer}
-        else:
-            self.loginDetails = {}
-        FILE = open(".printappsettings", 'w')
-        cPickle.dump(self.loginDetails, FILE)
+        #else:
+        #    self.loginDetails = {}
+            FILE = open(".printappsettings", 'w')
+            cPickle.dump(self.loginDetails, FILE)
         
     def startPrinting( self ):
         if not self.isLoggedIn():
