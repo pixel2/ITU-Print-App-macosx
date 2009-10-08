@@ -157,11 +157,7 @@ class PrintApp( object ):
         builder = gtk.Builder()
         (path, filename) = os.path.split(os.path.abspath(__file__))
         gladePath = os.path.join(path, self.glade_file)
-        try:
-            builder.add_from_file( gladePath )
-        except:
-            print self.gladeError % self.glade_file
-            raise SystemExit
+        builder.add_from_file( gladePath )
 
         self.win              = builder.get_object( "window1" )
         self.fileButton       = builder.get_object( "fileButton" )
@@ -328,7 +324,7 @@ class PrintApp( object ):
                            self.options))
         print s.args
         try:
-            s.expect(pexpect.EOF, timeout=10)
+            s.expect(pexpect.EOF, timeout=15)
         except pexpect.TIMEOUT:
             print self.timeoutError
             self.updateStatusbar(self.timeoutErrorStatusbar)
