@@ -282,7 +282,7 @@ class PrintApp( object ):
                 self.updateStatusbar(self.kerberosErrorStatusbar)
             else:
                 try: 
-                    s.expect("Password for %s@CHALMERS.SE:" % self.CID)
+                    s.expect("(Please enter the p|P)assword for %s@CHALMERS.SE:" % self.CID)
                 except pexpect.EOF:
                     print "User not found: " + s.before
                     self.updateStatusbar("User not found")
